@@ -6,4 +6,4 @@ import  { ConvictionSelect } from "./convictions/ConvictionSelect.js";
 
 getOfficers()
 getCriminals().then(() => CriminalList())
-getConvictions().then(() => ConvictionSelect())
+getConvictions().then(ConvictionSelect)

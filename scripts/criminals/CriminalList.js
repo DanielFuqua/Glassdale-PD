@@ -25,8 +25,8 @@ eventHub.addEventListener("crimeChosen", event => {
     contentTarget.innerHTML = ""
 
     // Build it up again
-    for (const singleCriminal of guiltyCriminals) {
-        contentTarget.innerHTML += Criminal(singleCriminal)
+    for (const singleGuiltyCriminal of guiltyCriminals) {
+        contentTarget.innerHTML += Criminal(singleGuiltyCriminal)
     }
 })
 

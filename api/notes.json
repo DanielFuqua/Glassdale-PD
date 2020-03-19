@@ -1,28 +1,70 @@
 {
   "notes": [
     {
-      "id": 1,
-      "noteText": "This person seems suspicious",
-      "timestamp": "",
-      "criminalName": "Dana White"
-    },
-    {
       "noteText": "test ",
-      "criminalName": "testing",
+      "criminal": "testing",
       "timestamp": 1584387481557,
       "id": 2
     },
     {
       "noteText": "very suspicious ",
-      "criminalName": "Will Smith",
+      "criminal": "Will Smith",
       "timestamp": 1584387544704,
       "id": 3
     },
     {
-      "noteText": "garrick",
-      "criminalName": "is a kidnapper",
+      "noteText": "is a kidnapper",
+      "criminal": "garrick",
       "timestamp": 1584411531042,
       "id": 4
+    },
+    {
+      "noteText": "very strange looking",
+      "criminal": "timy larson",
+      "timestamp": 1584463532674,
+      "id": 5
+    },
+    {
+      "noteText": "plays guitar",
+      "criminal": "alan",
+      "timestamp": 1584464637055,
+      "id": 6
+    },
+    {
+      "noteText": "This guy trips me out",
+      "criminal": "Frank Reynalds",
+      "timestamp": 1584469155716,
+      "id": 7
+    },
+    {
+      "noteText": "Shut dafugup",
+      "criminal": "Sean Magin",
+      "timestamp": 1584501887303,
+      "id": 8
+    },
+    {
+      "noteText": "is an idiot",
+      "criminal": "sean",
+      "timestamp": 1584502260603,
+      "id": 9
+    },
+    {
+      "noteText": "is an idiot",
+      "criminal": "sean",
+      "timestamp": 1584502323612,
+      "id": 10
+    },
+    {
+      "noteText": "this guy could have done it",
+      "criminal": "samuel",
+      "timestamp": 1584562839723,
+      "id": 11
+    },
+    {
+      "noteText": "Is a creepy dude.",
+      "criminal": "Kevin Leary",
+      "timestamp": 1584635110973,
+      "id": 12
     }
   ]
 }

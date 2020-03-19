@@ -1,0 +1,24 @@
+.criminalsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-basis: 75%;
+  height: 177px;
+}
+
+.criminal {
+  border: 1px solid black;
+  flex-basis: 24%;
+  margin: 2%;
+  background: rgba(0, 179, 255, 0.776);
+}
+
+.ul {
+  list-style: none;
+  padding-left: 15px;
+}
+
+h4 {
+  margin: 1em 1em 1em 1em;
+}

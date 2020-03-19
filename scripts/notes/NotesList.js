@@ -3,6 +3,7 @@ import { Note } from "./Note.js";
 
 const contentTarget = document.querySelector(".notesContainer");
 const eventHub = document.querySelector(".container");
+let visibility = false;
 
 eventHub.addEventListener("noteStateChanged", customEvent => {
   render();
@@ -10,6 +11,13 @@ eventHub.addEventListener("noteStateChanged", customEvent => {
 
 eventHub.addEventListener("allNotesClicked", customEvent => {
   render();
+  visibility = !visibility;
+
+  if (visibility) {
+    contentTarget.classList.remove("invisible");
+  } else {
+    contentTarget.classList.add("invisible");
+  }
 });
 
 const render = () => {

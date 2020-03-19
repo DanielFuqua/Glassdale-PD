@@ -1,21 +1,15 @@
-.criminalsContainer {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-evenly;
+@import "./criminals.css";
+@import "./filter.css";
+@import "./notes.css";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.25rem;
 }
 
-.criminal {
-    border: 1px solid black;
-    flex-basis: 24%;
-    margin: 2%;
-}
-
-.ul {
-    list-style: none;
-    padding-left: 15px;
-}
-
-h4 {
-    margin: 1em 1em 1em 1em;
+.listsContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
 }

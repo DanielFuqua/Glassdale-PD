@@ -6,6 +6,7 @@ import NoteForm from "./notes/NoteForm.js";
 import { DisplayNotesButton } from "./notes/DisplayNotesButton.js";
 import "./notes/NotesList.js";
 import { DisplayNoteFormButton } from "./notes/DisplayNoteFormButton.js";
+import "./criminals/knownAssociatesDialog.js";
 
 getCriminals().then(CriminalList);
 

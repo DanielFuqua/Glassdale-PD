@@ -3,6 +3,17 @@ import { Criminal } from "./Criminal.js";
 
 const contentTarget = document.querySelector(".criminalsContainer");
 const eventHub = document.querySelector(".container");
+let visibility = true;
+
+eventHub.addEventListener("allWitnessesClicked", event => {
+  visibility = !visibility;
+
+  if (visibility) {
+    contentTarget.classList.remove("invisible");
+  } else {
+    contentTarget.classList.add("invisible");
+  }
+});
 
 contentTarget.addEventListener("click", clickEvent => {
   if (clickEvent.target.id.startsWith("associates--")) {

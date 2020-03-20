@@ -25,7 +25,11 @@ const knownAssociatesDialog = criminalObject => {
     <dialog id="associatesDialog">
     ${criminalObject.known_associates
       .map(currentAssociate => {
-        return `<div>${currentAssociate.name}</div>`;
+        return `<secttion>
+            <h4>${currentAssociate.name}</h4>
+            <p>Alibi:</p>
+            <p>${currentAssociate.alibi}</p>
+        </section>`;
       })
       .join("")}
         <button id="associates--close">Close</button>

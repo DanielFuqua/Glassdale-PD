@@ -18,16 +18,15 @@ eventHub.addEventListener("allWitnessesClicked", customEvent => {
 
 const render = () => {
   getWitnesses().then(() => {
+    witnessContainer.innerHTML = `
+          <h1>Witnesses</h1>
+        `;
     const allTheWitnesses = useWitnesses();
 
-    witnessContainer.innerHTML = allTheWitnesses
+    witnessContainer.innerHTML += allTheWitnesses
       .map(currentWitnessObject => {
         return WitnessHTML(currentWitnessObject);
       })
       .join("");
   });
 };
-
-// const WitnessList = () => {
-//   render();
-// };

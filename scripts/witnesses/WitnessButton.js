@@ -1,5 +1,6 @@
 const contentTarget = document.querySelector(".witnesses__button");
 const eventHub = document.querySelector(".container");
+let visibility = false;
 
 contentTarget.addEventListener("click", clickEvent => {
   if (clickEvent.target.id === "witnesses--button") {

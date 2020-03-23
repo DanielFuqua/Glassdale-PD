@@ -15,6 +15,16 @@ eventHub.addEventListener("allWitnessesClicked", event => {
   }
 });
 
+eventHub.addEventListener("allCriminalsClicked", event => {
+  visibility = !visibility;
+
+  if (visibility) {
+    contentTarget.classList.remove("invisible");
+  } else {
+    contentTarget.classList.add("invisible");
+  }
+});
+
 contentTarget.addEventListener("click", clickEvent => {
   if (clickEvent.target.id.startsWith("associates--")) {
     const [junk, criminalId] = clickEvent.target.id.split("--");
@@ -58,6 +68,9 @@ eventHub.addEventListener("crimeChosen", event => {
 
 export const CriminalList = () => {
   const criminals = useCriminals();
+  contentTarget.innerHTML = `
+    <h1>Criminals</h1>
+  `;
 
   for (const singleCriminal of criminals) {
     contentTarget.innerHTML += Criminal(singleCriminal);

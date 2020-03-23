@@ -9,6 +9,8 @@ import { DisplayNoteFormButton } from "./notes/DisplayNoteFormButton.js";
 import "./criminals/knownAssociatesDialog.js";
 import "./witnesses/WitnessList.js";
 import { DisplayWitnessesButton } from "./witnesses/WitnessButton.js";
+// import { DisplayCriminalsButton } from "./criminals/CriminalsButton.js";
+import "./criminals/CriminalsButton.js";
 
 getCriminals().then(CriminalList);
 
@@ -19,3 +21,4 @@ DisplayNotesButton();
 DisplayNoteFormButton();
 NoteForm();
 DisplayWitnessesButton();
+// DisplayCriminalsButton();

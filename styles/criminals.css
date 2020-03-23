@@ -15,6 +15,12 @@
   margin: 2%;
   background: rgba(0, 179, 255, 0.776);
 }
+.criminalsContainer h1,
+.witnessesContainer h1 {
+  width: 100%;
+  text-align: center;
+  text-shadow: rgba(255, 255, 255, 0.509);
+}
 
 .ul {
   list-style: none;

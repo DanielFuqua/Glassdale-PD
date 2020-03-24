@@ -1,76 +1,23 @@
 {
   "notes": [
     {
-      "noteText": "test ",
-      "criminal": "testing",
-      "timestamp": 1584387481557,
-      "id": 2
+      "noteText": "zoeeeeee is a test",
+      "criminalId": 40,
+      "timestamp": 1585068562157,
+      "id": 1
     },
+
     {
-      "noteText": "very suspicious ",
-      "criminal": "Will Smith",
-      "timestamp": 1584387544704,
-      "id": 3
-    },
-    {
-      "noteText": "is a kidnapper",
-      "criminal": "garrick",
-      "timestamp": 1584411531042,
+      "noteText": "tester testing thing",
+      "criminalId": 13,
+      "timestamp": 1585073297268,
       "id": 4
     },
     {
-      "noteText": "very strange looking",
-      "criminal": "timy larson",
-      "timestamp": 1584463532674,
+      "noteText": "tester testing thing",
+      "criminalId": 13,
+      "timestamp": 1585073302853,
       "id": 5
-    },
-    {
-      "noteText": "plays guitar",
-      "criminal": "alan",
-      "timestamp": 1584464637055,
-      "id": 6
-    },
-    {
-      "noteText": "This guy trips me out",
-      "criminal": "Frank Reynalds",
-      "timestamp": 1584469155716,
-      "id": 7
-    },
-    {
-      "noteText": "Shut dafugup",
-      "criminal": "Sean Magin",
-      "timestamp": 1584501887303,
-      "id": 8
-    },
-    {
-      "noteText": "is an idiot",
-      "criminal": "sean",
-      "timestamp": 1584502260603,
-      "id": 9
-    },
-    {
-      "noteText": "is an idiot",
-      "criminal": "sean",
-      "timestamp": 1584502323612,
-      "id": 10
-    },
-    {
-      "noteText": "this guy could have done it",
-      "criminal": "samuel",
-      "timestamp": 1584562839723,
-      "id": 11
-    },
-    {
-      "noteText": "Is a creepy dude.",
-      "criminal": "Kevin Leary",
-      "timestamp": 1584635110973,
-      "id": 12
-    },
-    {
-      "noteText": "is going home now",
-      "criminal": "jenna",
-      "timestamp": 1584738815999,
-      "id": 13
     }
   ]
 }

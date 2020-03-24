@@ -1,9 +1,11 @@
 import { getNotes, useNotes } from "./NotesProvider.js";
 import { Note } from "./Note.js";
+import { useCriminals } from "../criminals/CriminalDataProvider.js";
+import { deleteNote } from "./NotesProvider.js";
 
 const contentTarget = document.querySelector(".notesContainer");
 const eventHub = document.querySelector(".container");
-let visibility = false;
+let visibility = true;
 
 eventHub.addEventListener("noteStateChanged", customEvent => {
   render();
@@ -11,6 +13,25 @@ eventHub.addEventListener("noteStateChanged", customEvent => {
 
 eventHub.addEventListener("allNotesClicked", customEvent => {
   render();
+});
+
+eventHub.addEventListener("click", clickEvent => {
+  if (clickEvent.target.id.startsWith("deleteNote--")) {
+    const [prefix, noteId] = clickEvent.target.id.split("--");
+    /*
+            Invoke the function that performs the delete operation.
+
+            Once the operation is complete you should THEN invoke
+            useNotes() and render the note list again.
+        */
+    deleteNote(noteId).then(() => {
+      const updatedNotes = useNotes();
+      render(updatedNotes);
+    });
+  }
+});
+
+const render = () => {
   visibility = !visibility;
 
   if (visibility) {
@@ -18,16 +39,23 @@ eventHub.addEventListener("allNotesClicked", customEvent => {
   } else {
     contentTarget.classList.add("invisible");
   }
-});
-
-const render = () => {
   getNotes().then(() => {
-    const allTheNotes = useNotes();
+    const notes = useNotes();
+    const criminals = useCriminals();
+    contentTarget.innerHTML = notes
+      .map(note => {
+        // Find the related criminal
+        const foundCriminal = criminals.find(
+          criminal => criminal.id === note.criminalId
+        );
 
-    contentTarget.innerHTML = allTheNotes
-      .map(currentNoteObject => {
-        return Note(currentNoteObject);
+        const html = Note(note, foundCriminal);
+        return html;
       })
       .join("");
   });
+};
+
+export const NotesList = () => {
+  render();
 };

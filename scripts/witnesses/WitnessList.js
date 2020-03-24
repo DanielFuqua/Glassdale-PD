@@ -16,6 +16,16 @@ eventHub.addEventListener("allWitnessesClicked", customEvent => {
   }
 });
 
+eventHub.addEventListener("allCriminalsClicked", event => {
+  visibility = !visibility;
+
+  if (visibility) {
+    witnessContainer.classList.remove("invisible");
+  } else {
+    witnessContainer.classList.add("invisible");
+  }
+});
+
 const render = () => {
   getWitnesses().then(() => {
     witnessContainer.innerHTML = `
@@ -25,7 +35,8 @@ const render = () => {
 
     witnessContainer.innerHTML += allTheWitnesses
       .map(currentWitnessObject => {
-        return WitnessHTML(currentWitnessObject);
+        const witnessStatementHTML = WitnessHTML(currentWitnessObject);
+        return witnessStatementHTML;
       })
       .join("");
   });

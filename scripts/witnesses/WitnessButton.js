@@ -1,6 +1,6 @@
 const contentTarget = document.querySelector(".witnesses__button");
 const eventHub = document.querySelector(".container");
-let visibility = false;
+let visibility = true;
 
 contentTarget.addEventListener("click", clickEvent => {
   if (clickEvent.target.id === "witnesses--button") {
@@ -10,6 +10,19 @@ contentTarget.addEventListener("click", clickEvent => {
     // Dispatch it to event hub
     eventHub.dispatchEvent(allWitnessesEvent);
   }
+});
+
+eventHub.addEventListener("allWitnessesClicked", customEvent => {
+  //Since the witnesses button is initially visible when it is clicked we want class "invisible" to be added the classList.
+  if (visibility) {
+    contentTarget.classList.add("invisible");
+  }
+});
+
+eventHub.addEventListener("allCriminalsClicked", customEvent => {
+  //Since the witnesses button is initially visible when it is clicked we want class "invisible" to be added the classList.
+
+  contentTarget.classList.remove("invisible");
 });
 
 export const DisplayWitnessesButton = () => {

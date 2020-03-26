@@ -28,13 +28,15 @@ contentTarget.addEventListener("click", clickEvent => {
     const noteText = document.querySelector("#noteText").value;
     const criminalId = document.querySelector("#criminalDropdown").value;
     const witnessId = document.querySelector("#witnessDropdown").value;
-    if (criminalId === 0) {
+    console.log(criminalId, witnessId);
+    if (witnessId === "0") {
       // Make a new object representation of a note
       const newNote = {
         noteText: noteText,
         criminalId: parseInt(criminalId),
         timestamp: Date.now()
       };
+      console.log(newNote);
       saveNote(newNote);
     } else {
       const witnessNote = {
@@ -42,6 +44,7 @@ contentTarget.addEventListener("click", clickEvent => {
         witnessId: parseInt(witnessId),
         timestamp: Date.now()
       };
+      console.log(witnessNote);
       saveNote(witnessNote);
 
       // Change API state and application state

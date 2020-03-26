@@ -48,24 +48,29 @@ const render = () => {
   getNotes().then(() => {
     const notes = useNotes();
     const witnesses = useWitnesses();
-    console.log(witnesses);
     const criminals = useCriminals();
-    contentTarget.innerHTML = notes
+    const witnessNotes = notes.filter(note => note.witnessId);
+    const criminalNotes = notes.filter(note => note.criminalId);
+    const notesForCriminals = criminalNotes
       .map(note => {
-        console.log(note);
         // Find the related criminal
         const foundCriminal = criminals.find(
           criminal => criminal.id === note.criminalId
         );
-        const foundWitness = witnesses.find(
-          witness => note.witnessId && witness.id === note.witnessId
-        );
-        console.log(foundWitness);
-        // const html = Note(note, foundCriminal);
-        const html2 = Note(note, foundWitness);
-        return html2;
+        const html = Note(note, foundCriminal);
+        return html;
       })
       .join("");
+    const notesForWitnesses = witnessNotes
+      .map(note => {
+        const foundWitness = witnesses.find(
+          witness => witness.id === note.witnessId
+        );
+        const html = Note(note, foundWitness);
+        return html;
+      })
+      .join("");
+    contentTarget.innerHTML = notesForCriminals + notesForWitnesses;
   });
 };
 

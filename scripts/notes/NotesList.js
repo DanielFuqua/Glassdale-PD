@@ -5,7 +5,7 @@ import { deleteNote } from "./NotesProvider.js";
 
 const contentTarget = document.querySelector(".notesContainer");
 const eventHub = document.querySelector(".container");
-let visibility = true;
+let visibility = false;
 
 eventHub.addEventListener("noteStateChanged", customEvent => {
   render();
@@ -13,17 +13,24 @@ eventHub.addEventListener("noteStateChanged", customEvent => {
 
 eventHub.addEventListener("allNotesClicked", customEvent => {
   render();
+  visibility = !visibility;
+
+  if (visibility) {
+    contentTarget.classList.remove("invisible");
+  } else {
+    contentTarget.classList.add("invisible");
+  }
 });
 
 eventHub.addEventListener("click", clickEvent => {
   if (clickEvent.target.id.startsWith("deleteNote--")) {
     const [prefix, noteId] = clickEvent.target.id.split("--");
     /*
-            Invoke the function that performs the delete operation.
-
-            Once the operation is complete you should THEN invoke
-            useNotes() and render the note list again.
-        */
+    Invoke the function that performs the delete operation.
+    
+    Once the operation is complete you should THEN invoke
+    useNotes() and render the note list again.
+    */
     deleteNote(noteId).then(() => {
       const updatedNotes = useNotes();
       render(updatedNotes);
@@ -32,8 +39,6 @@ eventHub.addEventListener("click", clickEvent => {
 });
 
 const render = () => {
-  visibility = !visibility;
-
   if (visibility) {
     contentTarget.classList.remove("invisible");
   } else {

@@ -1,10 +1,16 @@
 import { saveNote } from "./NotesProvider.js";
 import { useCriminals } from "../criminals/CriminalDataProvider.js";
+import { useWitnesses, getWitnesses } from "../witnesses/WitnessProvider.js";
 
 const contentTarget = document.querySelector(".noteFormContainer");
 const eventHub = document.querySelector(".container");
 
 let visibility = false;
+
+eventHub.addEventListener("noteStateChanged", customEvent => {
+  render();
+  contentTarget.classList.remove("invisible");
+});
 
 eventHub.addEventListener("noteFormButtonClicked", customEvent => {
   visibility = !visibility;
@@ -37,12 +43,20 @@ contentTarget.addEventListener("click", clickEvent => {
 const render = () => {
   contentTarget.classList.add("invisible");
   const allCriminals = useCriminals();
-  contentTarget.innerHTML = `
+  const allWitnesses = useWitnesses();
+
+  contentTarget.innerHTML += `
         <fieldset>
         <select id="criminalDropdown">
         <option value="0">Please choose a criminal...</option>
         ${allCriminals.map(currentCriminalObject => {
           return `<option value="${currentCriminalObject.id}">${currentCriminalObject.name}</option>`;
+        })}
+        </select>
+        <select id="witnessDropdown">
+        <option value="0">Please choose a witness...</option>
+        ${allWitnesses.map(currentWitnessObject => {
+          return `<option value="${currentWitnessObject.id}">${currentWitnessObject.name}</option>`;
         })}
         </select>
         </fieldset>

@@ -6,7 +6,6 @@
       "timestamp": 1585068562157,
       "id": 1
     },
-
     {
       "noteText": "tester testing thing",
       "criminalId": 13,
@@ -14,10 +13,58 @@
       "id": 4
     },
     {
-      "noteText": "tester testing thing",
-      "criminalId": 13,
-      "timestamp": 1585073302853,
+      "noteText": "is cool",
+      "criminalId": 25,
+      "timestamp": 1585074984363,
       "id": 5
+    },
+    {
+      "noteText": "tester test",
+      "criminalId": 31,
+      "timestamp": 1585075665241,
+      "id": 6
+    },
+    {
+      "noteText": "test",
+      "criminalId": 19,
+      "timestamp": 1585076039968,
+      "id": 7
+    },
+    {
+      "noteText": "Finna go to jaillllll",
+      "criminalId": 14,
+      "timestamp": 1585149982688,
+      "id": 8
+    },
+    {
+      "noteText": "test test.",
+      "criminalId": 70,
+      "timestamp": 1585185147792,
+      "id": 9
+    },
+    {
+      "noteText": "hello michaer",
+      "criminalId": 4,
+      "timestamp": 1585185240520,
+      "id": 10
+    },
+    {
+      "noteText": "michaerrrrr",
+      "criminalId": 4,
+      "timestamp": 1585185292486,
+      "id": 11
+    },
+    {
+      "noteText": "bitch ass ",
+      "criminalId": 8,
+      "timestamp": 1585185507848,
+      "id": 12
+    },
+    {
+      "noteText": "michael jordan lookin assssss",
+      "criminalId": 5,
+      "timestamp": 1585185530574,
+      "id": 13
     }
   ]
 }

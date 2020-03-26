@@ -14,15 +14,16 @@ import "./witnesses/WitnessButton.js";
 import { DisplayWitnessesButton } from "./witnesses/WitnessButton.js";
 import { NotesList } from "./notes/NotesList.js";
 import { getNotes, deleteNote } from "./notes/NotesProvider.js";
+import { getWitnesses } from "./witnesses/WitnessProvider.js";
 
 getCriminals()
   .then(CriminalList)
   .then(NotesList)
+  .then(getWitnesses)
   .then(NoteForm);
 
 // first get all convictions, THEN create the conviction dropdown
 getConvictions().then(ConvictionSelect);
-
 DisplayNotesButton();
 DisplayNoteFormButton();
 DisplayWitnessesButton();

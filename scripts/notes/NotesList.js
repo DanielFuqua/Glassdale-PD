@@ -2,6 +2,7 @@ import { getNotes, useNotes } from "./NotesProvider.js";
 import { Note } from "./Note.js";
 import { useCriminals } from "../criminals/CriminalDataProvider.js";
 import { deleteNote } from "./NotesProvider.js";
+import { useWitnesses } from "../witnesses/WitnessProvider.js";
 
 const contentTarget = document.querySelector(".notesContainer");
 const eventHub = document.querySelector(".container");
@@ -46,18 +47,30 @@ const render = () => {
   }
   getNotes().then(() => {
     const notes = useNotes();
+    const witnesses = useWitnesses();
     const criminals = useCriminals();
-    contentTarget.innerHTML = notes
+    const witnessNotes = notes.filter(note => note.witnessId);
+    const criminalNotes = notes.filter(note => note.criminalId);
+    const notesForCriminals = criminalNotes
       .map(note => {
         // Find the related criminal
         const foundCriminal = criminals.find(
           criminal => criminal.id === note.criminalId
         );
-
         const html = Note(note, foundCriminal);
         return html;
       })
       .join("");
+    const notesForWitnesses = witnessNotes
+      .map(note => {
+        const foundWitness = witnesses.find(
+          witness => witness.id === note.witnessId
+        );
+        const html = Note(note, foundWitness);
+        return html;
+      })
+      .join("");
+    contentTarget.innerHTML = notesForCriminals + notesForWitnesses;
   });
 };
 

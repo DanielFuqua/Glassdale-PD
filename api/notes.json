@@ -1,100 +1,28 @@
 {
   "notes": [
     {
-      "noteText": "zoeeeeee is a test",
-      "criminalId": 40,
-      "timestamp": 1585068562157,
-      "id": 1
-    },
-    {
       "noteText": "tester testing thing",
       "criminalId": 13,
       "timestamp": 1585073297268,
       "id": 4
     },
     {
-      "noteText": "is cool",
-      "criminalId": 25,
-      "timestamp": 1585074984363,
+      "noteText": "she is id 3",
+      "witnessId": 3,
+      "timestamp": 1585199505638,
       "id": 5
     },
     {
-      "noteText": "tester test",
-      "criminalId": 31,
-      "timestamp": 1585075665241,
+      "noteText": "he is working",
+      "criminalId": 2,
+      "timestamp": 1585199518334,
       "id": 6
     },
     {
-      "noteText": "test",
-      "criminalId": 19,
-      "timestamp": 1585076039968,
+      "noteText": "new note",
+      "witnessId": 2,
+      "timestamp": 1585199835166,
       "id": 7
-    },
-    {
-      "noteText": "Finna go to jaillllll",
-      "criminalId": 14,
-      "timestamp": 1585149982688,
-      "id": 8
-    },
-    {
-      "noteText": "test test.",
-      "criminalId": 70,
-      "timestamp": 1585185147792,
-      "id": 9
-    },
-    {
-      "noteText": "hello michaer",
-      "criminalId": 4,
-      "timestamp": 1585185240520,
-      "id": 10
-    },
-    {
-      "noteText": "michaerrrrr",
-      "criminalId": 4,
-      "timestamp": 1585185292486,
-      "id": 11
-    },
-    {
-      "noteText": "bitch ass ",
-      "criminalId": 8,
-      "timestamp": 1585185507848,
-      "id": 12
-    },
-    {
-      "noteText": "michael jordan lookin assssss",
-      "criminalId": 5,
-      "timestamp": 1585185530574,
-      "id": 13
-    },
-    {
-      "noteText": "yessir",
-      "criminalId": 3,
-      "timestamp": 1585190682309,
-      "id": 14
-    },
-    {
-      "noteText": "yessir",
-      "criminalId": 3,
-      "timestamp": 1585190744431,
-      "id": 15
-    },
-    {
-      "noteText": "yessir",
-      "criminalId": 3,
-      "timestamp": 1585190745699,
-      "id": 16
-    },
-    {
-      "noteText": "rythfhtfhgfhg",
-      "criminalId": 3,
-      "timestamp": 1585190756262,
-      "id": 17
-    },
-    {
-      "noteText": "bitch asssss",
-      "criminalId": 31,
-      "timestamp": 1585190831960,
-      "id": 18
     }
   ]
 }

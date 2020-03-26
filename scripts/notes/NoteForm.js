@@ -45,7 +45,7 @@ const render = () => {
   const allCriminals = useCriminals();
   const allWitnesses = useWitnesses();
 
-  contentTarget.innerHTML += `
+  contentTarget.innerHTML = `
         <fieldset>
         <select id="criminalDropdown">
         <option value="0">Please choose a criminal...</option>

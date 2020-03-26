@@ -18,8 +18,8 @@ import { getWitnesses } from "./witnesses/WitnessProvider.js";
 
 getCriminals()
   .then(CriminalList)
-  .then(NotesList)
   .then(getWitnesses)
+  .then(NotesList)
   .then(NoteForm);
 
 // first get all convictions, THEN create the conviction dropdown

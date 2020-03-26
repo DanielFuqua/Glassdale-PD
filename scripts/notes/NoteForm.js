@@ -27,16 +27,25 @@ contentTarget.addEventListener("click", clickEvent => {
   if (clickEvent.target.id === "saveNote") {
     const noteText = document.querySelector("#noteText").value;
     const criminalId = document.querySelector("#criminalDropdown").value;
+    const witnessId = document.querySelector("#witnessDropdown").value;
+    if (criminalId === 0) {
+      // Make a new object representation of a note
+      const newNote = {
+        noteText: noteText,
+        criminalId: parseInt(criminalId),
+        timestamp: Date.now()
+      };
+      saveNote(newNote);
+    } else {
+      const witnessNote = {
+        noteText: noteText,
+        witnessId: parseInt(witnessId),
+        timestamp: Date.now()
+      };
+      saveNote(witnessNote);
 
-    // Make a new object representation of a note
-    const newNote = {
-      noteText: noteText,
-      criminalId: parseInt(criminalId),
-      timestamp: Date.now()
-    };
-
-    // Change API state and application state
-    saveNote(newNote);
+      // Change API state and application state
+    }
   }
 });
 

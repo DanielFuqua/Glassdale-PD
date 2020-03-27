@@ -1,6 +1,6 @@
 import { saveNote } from "./NotesProvider.js";
 import { useCriminals } from "../criminals/CriminalDataProvider.js";
-import { useWitnesses, getWitnesses } from "../witnesses/WitnessProvider.js";
+import { useWitnesses } from "../witnesses/WitnessProvider.js";
 
 const contentTarget = document.querySelector(".noteFormContainer");
 const eventHub = document.querySelector(".container");
@@ -22,13 +22,28 @@ eventHub.addEventListener("noteFormButtonClicked", customEvent => {
   }
 });
 
+eventHub.addEventListener("allWitnessesClicked", customEvent => {
+  //wouldnt work to define the dom selectors in the global scope. had to do locally like so.
+  const witnessDropdown = document.querySelector("#witnessDropdown");
+  const criminalDropdown = document.querySelector("#criminalDropdown");
+  //Since the witnesses button is initially visible when it is clicked we want class "invisible" to be added the classList.
+  witnessDropdown.classList.remove("invisible");
+  criminalDropdown.classList.add("invisible");
+});
+eventHub.addEventListener("allCriminalsClicked", customEvent => {
+  const witnessDropdown = document.querySelector("#witnessDropdown");
+  const criminalDropdown = document.querySelector("#criminalDropdown");
+  //Since the witnesses button is initially visible when it is clicked we want class "invisible" to be added the classList.
+  witnessDropdown.classList.add("invisible");
+  criminalDropdown.classList.remove("invisible");
+});
+
 // Handle browser-generated click event in component
 contentTarget.addEventListener("click", clickEvent => {
   if (clickEvent.target.id === "saveNote") {
     const noteText = document.querySelector("#noteText").value;
     const criminalId = document.querySelector("#criminalDropdown").value;
     const witnessId = document.querySelector("#witnessDropdown").value;
-    console.log(criminalId, witnessId);
     if (witnessId === "0") {
       // Make a new object representation of a note
       const newNote = {
@@ -36,7 +51,6 @@ contentTarget.addEventListener("click", clickEvent => {
         criminalId: parseInt(criminalId),
         timestamp: Date.now()
       };
-      console.log(newNote);
       saveNote(newNote);
     } else {
       const witnessNote = {
@@ -44,7 +58,6 @@ contentTarget.addEventListener("click", clickEvent => {
         witnessId: parseInt(witnessId),
         timestamp: Date.now()
       };
-      console.log(witnessNote);
       saveNote(witnessNote);
 
       // Change API state and application state
@@ -65,7 +78,7 @@ const render = () => {
           return `<option value="${currentCriminalObject.id}">${currentCriminalObject.name}</option>`;
         })}
         </select>
-        <select id="witnessDropdown">
+        <select id="witnessDropdown" class="invisible">
         <option value="0">Please choose a witness...</option>
         ${allWitnesses.map(currentWitnessObject => {
           return `<option value="${currentWitnessObject.id}">${currentWitnessObject.name}</option>`;

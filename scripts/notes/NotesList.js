@@ -49,28 +49,40 @@ const render = () => {
     const notes = useNotes();
     const witnesses = useWitnesses();
     const criminals = useCriminals();
-    const witnessNotes = notes.filter(note => note.witnessId);
-    const criminalNotes = notes.filter(note => note.criminalId);
-    const notesForCriminals = criminalNotes
-      .map(note => {
-        // Find the related criminal
-        const foundCriminal = criminals.find(
-          criminal => criminal.id === note.criminalId
-        );
-        const html = Note(note, foundCriminal);
-        return html;
-      })
-      .join("");
-    const notesForWitnesses = witnessNotes
-      .map(note => {
-        const foundWitness = witnesses.find(
-          witness => witness.id === note.witnessId
-        );
-        const html = Note(note, foundWitness);
-        return html;
-      })
-      .join("");
-    contentTarget.innerHTML = notesForCriminals + notesForWitnesses;
+    // const witnessNotes = notes.filter(note => note.witnessId);
+    // const criminalNotes = notes.filter(note => note.criminalId);
+    // const notesForCriminals = criminalNotes.map(note => {
+    //   // Find the related criminal
+    //   const foundCriminal = criminals.find(
+    //     criminal => criminal.id === note.criminalId
+    //   );
+    //   const html = Note(note, foundCriminal);
+    //   return html;
+    // });
+    // const notesForWitnesses = witnessNotes.map(note => {
+    //   const foundWitness = witnesses.find(
+    //     witness => witness.id === note.witnessId
+    //   );
+    //   const html = Note(note, foundWitness);
+    //   return html;
+    // });
+    // const notesForAll = notesForCriminals.concat(notesForWitnesses);
+    // console.log(notesForAll);
+    // contentTarget.innerHTML = notesForAll
+    //   .sort((a, b) => a.timestamp - b.timestamp)
+    //   .join("");
+    const notesForAll = notes.map(note => {
+      let person;
+      if (note.criminalId) {
+        person = criminals.find(criminal => criminal.id === note.criminalId);
+      } else if (note.witnessId) {
+        person = witnesses.find(witness => witness.id === note.witnessId);
+      }
+      const html = Note(note, person);
+      return html;
+    });
+
+    contentTarget.innerHTML = notesForAll.join("");
   });
 };
 

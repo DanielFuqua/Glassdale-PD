@@ -1,28 +1,16 @@
 {
   "notes": [
     {
-      "noteText": "tester testing thing",
-      "criminalId": 13,
-      "timestamp": 1585073297268,
-      "id": 4
+      "noteText": "tester",
+      "criminalId": 1,
+      "timestamp": 1585273684173,
+      "id": 1
     },
     {
-      "noteText": "she is id 3",
-      "witnessId": 3,
-      "timestamp": 1585199505638,
-      "id": 5
-    },
-    {
-      "noteText": "he is working",
-      "criminalId": 2,
-      "timestamp": 1585199518334,
-      "id": 6
-    },
-    {
-      "noteText": "new note",
-      "witnessId": 2,
-      "timestamp": 1585199835166,
-      "id": 7
+      "noteText": "bitch assss",
+      "witnessId": 1,
+      "timestamp": 1585273693937,
+      "id": 2
     }
   ]
 }
